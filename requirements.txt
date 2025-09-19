@@ -1,0 +1,31 @@
+# LangGraph工作流框架
+langgraph>=0.1.0
+langchain>=0.1.0
+langchain-core>=0.1.0
+langchain-openai>=0.1.0
+langchain-google-genai>=1.0.0
+
+# AI服务提供者
+openai>=1.0.0
+google-generativeai>=0.3.0
+
+# 数据处理和验证
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
+
+# 环境配置
+python-dotenv>=1.0.0
+
+# 文件处理
+pathlib2>=2.3.0
+
+# 命令行界面
+click>=8.0.0
+rich>=13.0.0  # 用于美化命令行输出
+
+# JSON处理
+orjson>=3.8.0  # 更快的JSON处理
+
+# 可选：Web界面（如果需要）
+# fastapi>=0.100.0
+# uvicorn>=0.20.0
