@@ -10,8 +10,8 @@ import asyncio
 import time
 from datetime import datetime
 
-from ..models.document import DocumentSection
-from ..models.slide import SlideContent, QualityScore, SlideGenerationContext
+from models.document import DocumentSection
+from models.slide import SlideContent, QualityScore, SlideGenerationContext
 
 
 class AIProvider(ABC):

@@ -8,9 +8,9 @@ import os
 from typing import Dict, Any, Optional
 from dotenv import load_dotenv
 
-from .base_provider import AIProvider
-from .openai_provider import OpenAIProvider
-from .gemini_provider import GeminiProvider
+from providers.base_provider import AIProvider
+from providers.openai_provider import OpenAIProvider
+from providers.gemini_provider import GeminiProvider
 
 # 加载环境变量
 load_dotenv()

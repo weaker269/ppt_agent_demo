@@ -9,9 +9,9 @@ import re
 from typing import List, Dict, Any, Optional
 import google.generativeai as genai
 
-from .base_provider import AIProvider
-from ..models.document import DocumentSection
-from ..models.slide import SlideContent, QualityScore, SlideGenerationContext
+from providers.base_provider import AIProvider
+from models.document import DocumentSection
+from models.slide import SlideContent, QualityScore, SlideGenerationContext
 
 
 class GeminiProvider(AIProvider):

@@ -54,8 +54,8 @@ class QualityScore(BaseModel):
 class SlideGenerationContext(BaseModel):
     """幻灯片生成上下文"""
     document_filename: str = Field(default="", description="文档文件名")
-    total_sections: int = Field(description="总章节数")
-    current_section_index: int = Field(description="当前章节索引")
+    total_sections: int = Field(default=0, description="总章节数")
+    current_section_index: int = Field(default=0, description="当前章节索引")
     target_audience: str = Field(default="professional", description="目标受众")
     presentation_style: str = Field(default="informative", description="演示风格")
     language: str = Field(default="zh-CN", description="语言")

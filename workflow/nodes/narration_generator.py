@@ -7,8 +7,8 @@
 import asyncio
 from typing import List, Dict, Any, Optional
 
-from ...models.slide import SlideContent, NarrationContent, PresentationNarration
-from ...providers.provider_factory import ProviderRouter
+from models.slide import SlideContent, NarrationContent, PresentationNarration
+from providers.provider_factory import ProviderRouter
 
 
 class NarrationGeneratorNode:

@@ -10,22 +10,21 @@ from typing import Dict, Any, List, Optional
 from datetime import datetime
 
 from langgraph.graph import StateGraph, END
-from langgraph.prebuilt import ToolExecutor
 from langchain_core.messages import BaseMessage, HumanMessage
 
-from ..models.workflow import (
+from models.workflow import (
     WorkflowState, WorkflowStatus, ProcessingStep, WorkflowConfiguration,
-    WorkflowOutput
+    WorkflowOutput, WorkflowError
 )
-from ..models.document import ProcessedDocument
-from ..models.slide import PresentationData, PresentationNarration
-from ..providers.provider_factory import ProviderRouter
-from ..utils.file_utils import FileUtils
+from models.document import ProcessedDocument
+from models.slide import PresentationData, PresentationNarration
+from providers.provider_factory import ProviderRouter
+from utils.file_utils import FileUtils
 
-from .nodes.document_parser import DocumentParserNode
-from .nodes.slide_generator import SlideGeneratorNode
-from .nodes.quality_evaluator import QualityEvaluatorNode
-from .nodes.narration_generator import NarrationGeneratorNode
+from workflow.nodes.document_parser import DocumentParserNode
+from workflow.nodes.slide_generator import SlideGeneratorNode
+from workflow.nodes.quality_evaluator import QualityEvaluatorNode
+from workflow.nodes.narration_generator import NarrationGeneratorNode
 
 
 class PPTWorkflow:
@@ -152,12 +151,12 @@ class PPTWorkflow:
             error_output = WorkflowOutput(
                 workflow_id=workflow_id,
                 status=WorkflowStatus.FAILED,
-                errors=[{
-                    'step': 'workflow_execution',
-                    'error_type': type(e).__name__,
-                    'error_message': str(e),
-                    'is_recoverable': False
-                }]
+                errors=[WorkflowError(
+                    step=ProcessingStep.DOCUMENT_PARSING,  # 使用有效的枚举值
+                    error_type=type(e).__name__,
+                    error_message=str(e),
+                    is_recoverable=False
+                )]
             )
             return error_output
 

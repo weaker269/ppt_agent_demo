@@ -9,11 +9,11 @@ import re
 from typing import List, Dict, Any, Optional
 from datetime import datetime
 
-from ...models.document import (
+from models.document import (
     DocumentSection, DocumentInfo, DocumentAnalysis,
     DocumentEstimates, ProcessedDocument, DocumentValidationResult
 )
-from ...providers.provider_factory import ProviderRouter
+from providers.provider_factory import ProviderRouter
 
 
 class DocumentParserNode:

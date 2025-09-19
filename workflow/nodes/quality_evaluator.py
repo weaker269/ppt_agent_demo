@@ -7,9 +7,9 @@
 import asyncio
 from typing import List, Dict, Any, Optional
 
-from ...models.document import DocumentSection
-from ...models.slide import SlideContent, PresentationData, QualityScore
-from ...providers.provider_factory import ProviderRouter
+from models.document import DocumentSection
+from models.slide import SlideContent, PresentationData, QualityScore
+from providers.provider_factory import ProviderRouter
 
 
 class QualityEvaluatorNode:

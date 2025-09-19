@@ -11,8 +11,8 @@ from typing import Dict, Any, Optional
 from pathlib import Path
 import mimetypes
 
-from ..models.slide import PresentationData
-from ..models.workflow import WorkflowOutput
+from models.slide import PresentationData
+from models.workflow import WorkflowOutput
 
 
 class FileUtils:

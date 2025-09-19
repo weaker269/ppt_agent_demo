@@ -8,12 +8,12 @@ import asyncio
 from typing import List, Dict, Any, Optional
 from datetime import datetime
 
-from ...models.document import DocumentSection
-from ...models.slide import (
+from models.document import DocumentSection
+from models.slide import (
     SlideContent, SlideGenerationContext, PresentationData,
     SlidesGenerationSummary, QualityScore
 )
-from ...providers.provider_factory import ProviderRouter
+from providers.provider_factory import ProviderRouter
 
 
 class SlideGeneratorNode:

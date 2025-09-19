@@ -9,9 +9,9 @@ import re
 from typing import List, Dict, Any, Optional
 from openai import AsyncOpenAI
 
-from .base_provider import AIProvider
-from ..models.document import DocumentSection
-from ..models.slide import SlideContent, QualityScore, SlideGenerationContext
+from providers.base_provider import AIProvider
+from models.document import DocumentSection
+from models.slide import SlideContent, QualityScore, SlideGenerationContext
 
 
 class OpenAIProvider(AIProvider):

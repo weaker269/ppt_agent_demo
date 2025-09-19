@@ -162,7 +162,15 @@ def display_errors(result):
     if result.errors:
         console.print("\n[bold red]错误详情:[/bold red]")
         for error in result.errors:
-            console.print(f"  🔸 {error.get('step', '未知')}: {error.get('error_message', '未知错误')}")
+            # 处理WorkflowError对象
+            if hasattr(error, 'step'):
+                step = error.step
+                message = error.error_message
+            else:
+                # 向后兼容字典格式
+                step = error.get('step', '未知')
+                message = error.get('error_message', '未知错误')
+            console.print(f"  🔸 {step}: {message}")
 
     if result.warnings:
         console.print("\n[bold yellow]警告信息:[/bold yellow]")
